@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="09a384cb-0c8e-4da8-9816-269859da4b4c" >
+		<http:listener-connection host="localhost" port="8081" />
+	</http:listener-config>
+	<flow name="jenkins-deployFlow" doc:id="667dbd62-f887-4acd-94da-37ec5336ac75" >
+		<http:listener doc:name="Listener" doc:id="46a7b8bf-478e-4efe-9565-b8b5402a7b0c" config-ref="HTTP_Listener_config" path="/jk"/>
+		<ee:transform doc:name="Transform Message" doc:id="5f6ed4ee-5a78-4385-a73c-a5a315209790" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"Congrats" : "Your application is Deployed Successfully"
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="66cd2c4c-30d5-46c3-b750-e16f29c9aa0b" message="#[payload]"/>
+	</flow>
+</mule>
