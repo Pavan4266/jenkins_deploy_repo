@@ -29,31 +29,26 @@
 				<version>3.2.0</version>
 			</plugin>
 			<plugin>
-    <groupId>org.mule.tools.maven</groupId>
-    <artifactId>mule-maven-plugin</artifactId>
-    <version>${mule.maven.plugin.version}</version>
-    <extensions>true</extensions>
-    <configuration>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>${mule.maven.plugin.version}</version>
+				<extensions>true</extensions>
+				<configuration>
     <cloudhub2Deployment>
-        <uri>https://anypoint.mulesoft.com</uri>
-        <provider>MC</provider>
-        <environment>Sandbox</environment>
-        <target>Cloudhub-US-East-2</target>
-        <muleVersion>4.10.2</muleVersion>
-        <username>Pavan112211</username>
-        <password>m7@vEVN6adM@.26</password>
-        <applicationName>cloudhub-app</applicationName>
-        <replicas>1</replicas>
-        <vCores>0.1</vCores>
-        <deploymentSettings>
-            <generateDefaultPublicUrl>true</generateDefaultPublicUrl>
-            <http>
-                <enabled>true</enabled> 
-            </http>
-        </deploymentSettings>
+      <uri>https://anypoint.mulesoft.com</uri>
+      <provider>MC</provider>
+      <environment>Sandbox</environment>
+      <target>Cloudhub-US-East-2</target>
+      <muleVersion>4.10.2</muleVersion>
+      <username>Pavan112211</username>
+      <password>m7@vEVN6adM@.26</password>
+      <applicationName>cloudhub-app</applicationName>
+      <replicas>1</replicas>
+      <vCores>0.1</vCores>
     </cloudhub2Deployment>
-</configuration>
-</plugin>
+  </configuration>
+				
+			</plugin>
 		</plugins>
 	</build>
 
