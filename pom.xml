@@ -42,7 +42,7 @@
       <muleVersion>4.10.2</muleVersion>
       <username>Pavan112211</username>
       <password>m7@vEVN6adM@.26</password>
-      <applicationName>cloudhub-app</applicationName>
+      <applicationName>Jenkins-test</applicationName>
       <replicas>1</replicas>
       <vCores>0.1</vCores>
     </cloudhub2Deployment>
