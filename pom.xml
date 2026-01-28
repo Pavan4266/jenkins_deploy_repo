@@ -43,6 +43,7 @@
       <username>Pavan112211</username>
       <password>m7@vEVN6adM@.26</password>
       <applicationName>jenkins-test</applicationName>
+      <generateDefaultPublicUrl>true</generateDefaultPublicUrl>
       <replicas>1</replicas>
       <vCores>0.1</vCores>
     </cloudhub2Deployment>
