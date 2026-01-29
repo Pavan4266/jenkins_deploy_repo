@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>60fe4e78-dc82-4bd3-8aff-1d4b532f05fc</groupId>
-	<artifactId>jenkins-deploy</artifactId>
+	<artifactId>jenkins-test</artifactId>
 	<version>1.0.0</version>
 	<packaging>mule-application</packaging>
 
-	<name>jenkins-deploy</name>
+	<name>jenkins-test</name>
 
 	<description/>
 	<properties>
@@ -42,7 +42,7 @@
 						<muleVersion>4.10.2</muleVersion>
 						<username>Pavan112222</username>
 						<password>m7@vEVN6adM@.28</password>
-						<applicationName>jenkins-test</applicationName>
+						<applicationName>jenkins-test-ci</applicationName>
 						<replicas>1</replicas>
 						<vCores>0.1</vCores>
 					</cloudhub2Deployment>
