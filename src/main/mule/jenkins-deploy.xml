@@ -6,7 +6,7 @@
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="09a384cb-0c8e-4da8-9816-269859da4b4c" >
-		<http:listener-connection host="0.0.0.0" port="7777" />
+		<http:listener-connection host="0.0.0.0" port="${http.port}" />
 	</http:listener-config>
 	<configuration-properties doc:name="Configuration properties" doc:id="2166af48-aa16-42da-a7e5-7277cced9ecb" file="dev.yaml" />
 	<flow name="jenkins-deployFlow" doc:id="667dbd62-f887-4acd-94da-37ec5336ac75" >
@@ -22,5 +22,10 @@ output application/json
 			</ee:message>
 		</ee:transform>
 		<logger level="INFO" doc:name="Logger" doc:id="66cd2c4c-30d5-46c3-b750-e16f29c9aa0b" message="#[payload]"/>
+		<error-handler >
+			<on-error-continue enableNotifications="true" logException="true" doc:name="On Error Continue" doc:id="868cf2bd-758f-48ea-9062-cdaa9785325b" type="ANY">
+				<logger level="INFO" doc:name="Logger" doc:id="6447cfb7-ae32-4cd0-97a6-23849194f2a9" message="Error raised"/>
+			</on-error-continue>
+		</error-handler>
 	</flow>
 </mule>
